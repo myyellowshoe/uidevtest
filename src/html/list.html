@@ -1,13 +1,23 @@
+<script id="list" type="text/html">
+
 <section id="stories">
 	<ul>
-		<li>
-			<a href="{{url_path}}" title="{{summary}}">
-				<img src="{{lead_photo_image_thumb}}" alt="{{summary}}">
-			</a>
-			<h2>{{title}}</h2>
-			<span class="category">Category /{{#categories_name}} * {{.}} {{/categories_name}}</span>					
-			<span class="posted">{{pub_date}}</span>
-			<span class="updated">{{updated}}</span>
-		<li>
+		{{#objects}}
+			<li>
+				<a href="{{url_path}}" title="{{summary}}">
+					<img src="{{lead_photo_image_thumb}}" alt="{{summary}}">
+				</a>
+				<h2><a href="{{url_path}}" title="{{summary}}">{{title}}</a></h2>
+				<ul class="categories">
+					{{#categories_name}}
+						<li> <span class="delimiter">/</span> {{.}} </li>
+					{{/categories_name}}
+				</ul>					
+				<span class="posted">{{pub_date}}</span>
+				<span class="updated">{{updated}}</span>
+			</li>
+		{{/objects}}
 	</ul>
 </section>
+
+</script>

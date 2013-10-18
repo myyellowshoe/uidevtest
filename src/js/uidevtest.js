@@ -1,9 +1,13 @@
 $(function() {
 	
-	$.getJSON( "js/uidevtest-data.json", function( data ) {		
-	    // Clear #someList and then render all the viewModels using the list-template.
-	    $('#page').empty().mustache('html/list.html', data.objects);
-	}
-
+	//Load list on page load
+	$.getJSON( "../js/uidevtest-data.js", function( data ) {		
+	    $.Mustache.load('list.html')
+    	.done(function () {
+			//Set variable for last item in list
+        	$('#page').empty().mustache('list', data);
+        });
+	});   
+   
 
 });

@@ -62,8 +62,50 @@
 
 /* ================================================== */
 
-/* Hide template */
-.template{diplay:none;}
+#stories li {
+	clear:both;
+	list-style:none;
+	padding:21px 9px;
+}
+
+#stories li h2 a, #stories li h2 a:link{
+	font-size:16px; 
+	font-weight:bold;
+	color:#036dbe;
+}
+
+#stories li h2 a:hover{
+	font-size:16px; 
+	font-weight:bold;
+	color:#036dbe;
+}
+
+
+#stories li img{
+	float:left;
+	display:block;
+	border-bottom:3px solid #fff;
+	border-right:3px solid #fff;
+	-webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, .3);
+	box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, .3); 
+}
+
+#stories .categories li, #stories .categories span{
+	font-size:14px;
+	color:#444444;
+}
+
+#stories .categories li{
+	display:inline;
+	list-style:none;
+	padding:0;
+
+} 
+
+#stories .categories li:first-child .delimiter{
+	display:none;
+}
+
 
 
 
