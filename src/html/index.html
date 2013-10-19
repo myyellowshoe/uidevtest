@@ -19,6 +19,63 @@
     <body>
 		<div id="page">
 			
+			<script id="story" type="text/html">
+
+					<section id="story">
+		 
+						<ul id="breadcrumb">
+							<li> <a href="#">Home</a> > </li>
+							<li> <a href="#">News</a> </li>
+						</ul>
+			
+						<h2>{{title}}</h2>
+						<span class="updated">Updated: {{updated}} | </span>
+						<span class="posted">Posted: {{pub_date}} </span>
+			
+						<div class="storyImage">
+							<img src="{{lead_photo_image_url}}" alt="{{summary}}">
+							<span></span>
+							<p></p>
+						</div>
+	
+						<ul class="actions">
+							<li class="comment social"><a href="#"> <span></span>Comment </a></li>
+							<li class="share social"> <a href="#"><span></span>Share </a></li>
+							<li class="favorite social"><a href="#"> <span></span>Favorite </a></li>
+							<li class="vote social"><a href="#"><span></span>Vote </a></li>				
+						<ul>
+						<span class="author">By:</span>
+						<p>{{{story}}}</p>
+
+					</section>
+
+			</script>
+			
+			
+			<script id="list" type="text/html">
+
+			<section id="stories">
+				<ul>
+					{{#story}}
+						<li>
+							<a href="{{url_path}}" title="{{summary}}">
+								<img src="{{lead_photo_image_thumb}}" alt="{{summary}}">
+							</a>
+							<h2><a href="{{url_path}}" title="{{summary}}">{{title}}</a></h2>
+							<ul class="categories">
+								{{#categories_name}}
+									<li> <span class="delimiter">/</span> {{.}} </li>
+								{{/categories_name}}
+							</ul>					
+							<div class="posted">Posted: {{pub_date}}</div>
+							<div class="updated">Updated: {{updated}}</div>
+						</li>
+					{{/story}}
+				</ul>
+			</section>
+
+			</script>
+			
 		<div>
 	</body>
 <html>
