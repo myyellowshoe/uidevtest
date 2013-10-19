@@ -31,21 +31,25 @@
 						<h2>{{title}}</h2>
 						<span class="updated">Updated: {{updated}} | </span>
 						<span class="posted">Posted: {{pub_date}} </span>
-			
-						<div class="storyImage">
-							<img src="{{lead_photo_image_url}}" alt="{{summary}}">
-							<span></span>
-							<p></p>
+						
+						
+						<div class="storyImage col1">
+							<img src="{{lead_photo_image_url}}" alt="{{lead_photo_caption}}">
+							<span>{{lead_photo_credit}}</span>
+							<p>{{summary}}</p>
 						</div>
 	
-						<ul class="actions">
-							<li class="comment social"><a href="#"> <span></span>Comment </a></li>
-							<li class="share social"> <a href="#"><span></span>Share </a></li>
-							<li class="favorite social"><a href="#"> <span></span>Favorite </a></li>
-							<li class="vote social"><a href="#"><span></span>Vote </a></li>				
-						<ul>
-						<span class="author">By:</span>
-						<p>{{{story}}}</p>
+						<ul class="social">
+							<li class="comment action"><a href="#"> <span></span>Comment </a></li>
+							<li class="share action"> <a href="#"><span></span>Share </a></li>
+							<li class="favorite action"><a href="#"> <span></span>Favorite </a></li>
+							<li class="vote action"><a href="#"><span></span>Vote </a></li>				
+						</ul>
+						
+						<div class="col2">
+							<span class="author col2">By: <a href="#">{{author}}</a></span>
+							{{{story}}}
+						</div>
 
 					</section>
 
@@ -59,7 +63,7 @@
 					{{#story}}
 						<li>
 							<a href="{{url_path}}" title="{{summary}}">
-								<img src="{{lead_photo_image_thumb}}" alt="{{summary}}">
+								<img src="{{lead_photo_image_thumb}}" alt="{{lead_photo_caption}}">
 							</a>
 							<h2><a href="{{url_path}}" title="{{summary}}">{{title}}</a></h2>
 							<ul class="categories">
