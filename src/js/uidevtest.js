@@ -112,6 +112,10 @@ $(function() {
 	_cmg.showStoryView = function(story){		
 			//Render the summaries on the page.
         	$('#page').empty().mustache('story', story);
+			
+			//Enable columns for content
+			$('#page #content').columnize({ columns: 2 });
+
 	}
 	
 	
@@ -133,10 +137,10 @@ $(function() {
 		
 		//Handle location
 		_cmg.handleLocation( _cmg.properties.params ); 				
-	}); 
+	});
 	
- 
-	
+
+		
 
 
 });
