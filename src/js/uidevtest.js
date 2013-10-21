@@ -11,8 +11,6 @@ $(function() {
 	//Format Date		
 	_cmg.formatDate = function(date) {
 	    var d = new Date(date);
-		console.log(date);
-		console.log(d);
 	    var hh = d.getHours();
 	    var m = d.getMinutes();
 	    var s = d.getSeconds();
@@ -90,7 +88,6 @@ $(function() {
 		} 
 		//If Story Parameter exsits
 		if( storyLocation || storyLocation === 0 ){		
-			console.log(_cmg.stories.story[storyLocation]);
 			_cmg.showStoryView( _cmg.stories.story[storyLocation] );
 		//No param load default list view	
 		}else{
@@ -105,7 +102,6 @@ $(function() {
 	
 	//Load List View
 	_cmg.showListView = function(){	
-		console.log(_cmg);	
 			//Render the summaries on the page.
         	$('#page').empty().mustache('list', _cmg.stories);	
 			
