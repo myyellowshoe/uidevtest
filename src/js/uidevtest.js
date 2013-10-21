@@ -3,8 +3,10 @@ $(function() {
 	//set up namespace
     var _cmg = {};
 	_cmg.properties = {};
+	_cmg.properties.device480 = false;
 	_cmg.stories = {};
 	_cmg.stories.story = [];
+	
 	
 	//Format Date		
 	_cmg.formatDate = function(date) {
@@ -115,7 +117,39 @@ $(function() {
 			
 			//Enable columns for content
 			$('#page #content').columnize({ columns: 2 });
+			
+			//Check for device width on load
+			_cmg.showMobileStoryView();
 
+	}
+	
+	//Load Mobile Story View
+	_cmg.showMobileStoryView = function(story){
+		
+		//Enable Mobile View	
+		if($("#DeviceWidth-480").css("float") === 'left' && _cmg.properties.device480 === false ){
+			$('#page').addClass('480px');
+			
+			//Allow this to only run once
+			_cmg.properties.device480 = true;
+			
+			//Move the dates above the h2
+			$('#page h2').before( $('.postedUpdated') );
+			//Move the social after h2
+			$('#page h2').after( $('#page .social') );
+			$('#page .social').removeClass('greyscale');
+		}
+		
+		//Disable Mobile View 
+		else if($("#DeviceWidth-480").css("float") === 'none' && _cmg.properties.device480 === true  ){
+			//Allow this to only run once
+			_cmg.properties.device480 = false;
+			
+			//Move things back to > 480 width
+			$('#page h2').after( $('.postedUpdated') );
+			$('#page .container > .col2').prepend( $('#page .social') );
+			$('#page .social').addClass('greyscale');
+		}
 	}
 	
 	
@@ -139,8 +173,11 @@ $(function() {
 		_cmg.handleLocation( _cmg.properties.params ); 				
 	});
 	
+	//check for window resize,	
+	$(window).resize(function(){	
+		_cmg.showMobileStoryView();
+	});
 
-		
 
 
 });

@@ -22,8 +22,9 @@
     <body>
 		<div id="page">
 			
+			
 			<script id="story" type="text/html">
-
+					<span id="DeviceWidth-480"></span>
 					<section id="story">
 		 
 						<ul id="breadcrumb">
@@ -34,27 +35,29 @@
 						<h2>{{title}}</h2>
 						<div class="postedUpdated">Updated: {{updated}} | Posted: {{pub_date}} </div>
 						
+						<div class="container">
 						
-						<div class="storyImage col1">
-							<div class="container">
-								<img src="{{lead_photo_image_url}}" alt="{{lead_photo_caption}}">
-								<span>{{lead_photo_credit}}</span>
+							<div class="storyImage col1">
+								<div class="container">
+									<img src="{{lead_photo_image_url}}" alt="{{lead_photo_caption}}">
+									<span>{{lead_photo_credit}}</span>
+								</div>
+								<p>{{summary}}</p>
 							</div>
-							<p>{{summary}}</p>
-						</div>
-						<div class="col2">						
-							<ul class="social">
-								<li class="comment action"><a href="#"> <span></span>Comment </a></li>
-								<li class="share action"> <a href="#"><span></span>Share </a></li>
-								<li class="favorite action"><a href="#"> <span></span>Favorite </a></li>
-								<li class="vote action"><a href="#"><span></span>Vote </a></li>				
-							</ul>
-							<span class="author">By: <a href="#">{{author}}</a></span>
-							<div id="content">	
-								{{{story}}}
+							<div class="col2">						
+								<ul class="social greyscale">
+									<li class="comment action"><a href="#"> <span></span>Comment </a></li>
+									<li class="share action"> <a href="#"><span></span>Share </a></li>
+									<li class="favorite action"><a href="#"> <span></span>Favorite </a></li>
+									<li class="vote action"><a href="#"><span></span>Vote </a></li>				
+								</ul>
+								<span class="author">By: <a href="#">{{author}}</a></span>
+								<div id="content">	
+									{{{story}}}
+								</div>
 							</div>
+							
 						</div>
-
 					</section>
 
 			</script>
