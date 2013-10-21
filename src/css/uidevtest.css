@@ -162,7 +162,12 @@
 	display:block;
 	line-height:1;
 	padding: 2px 10px 5px 8px;
+	min-width: 760px;
 }
+	#page.width480 #story #breadcrumb{
+		min-width: inherit;
+	}
+	
 	#story #breadcrumb li{
 		display:inline-block;
 	}
