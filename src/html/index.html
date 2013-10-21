@@ -64,26 +64,26 @@
 			
 			
 			<script id="list" type="text/html">
-
-			<section id="stories">
-				<ul>
-					{{#story}}
-						<li>
-							<a href="{{url_path}}" title="{{summary}}">
-								<img src="{{lead_photo_image_thumb}}" alt="{{lead_photo_caption}}">
-							</a>
-							<h2><a href="{{url_path}}" title="{{summary}}">{{title}}</a></h2>
-							<ul class="categories">
-								{{#categories_name}}
-									<li> <span class="delimiter">/</span> {{.}} </li>
-								{{/categories_name}}
-							</ul>					
-							<div class="posted">Posted: {{pub_date}}</div>
-							<div class="updated">Updated: {{updated}}</div>
-						</li>
-					{{/story}}
-				</ul>
-			</section>
+				<span id="DeviceWidth-480"></span>
+				<section id="stories">
+					<ul>
+						{{#story}}
+							<li>
+								<a href="?story={{id}}" title="{{summary}}">
+									<img src="{{lead_photo_image_thumb}}" alt="{{lead_photo_caption}}">
+								</a>
+								<h2><a href="?story={{id}}" title="{{summary}}">{{title}}</a></h2>
+								<ul class="categories">
+									{{#categories_name}}
+										<li> <span class="delimiter">/</span> {{.}} </li>
+									{{/categories_name}}
+								</ul>					
+								<div class="posted">Posted: {{pub_date}}</div>
+								<div class="updated">Updated: {{updated}}</div>
+							</li>
+						{{/story}}
+					</ul>
+				</section>
 
 			</script>
 			

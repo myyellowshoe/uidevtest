@@ -107,7 +107,10 @@ $(function() {
 	_cmg.showListView = function(){	
 		console.log(_cmg);	
 			//Render the summaries on the page.
-        	$('#page').empty().mustache('list', _cmg.stories);		
+        	$('#page').empty().mustache('list', _cmg.stories);	
+			
+			//Check for device width on load
+			_cmg.showMobileView();	
 	}
 	
 	//Load Story View
@@ -119,25 +122,28 @@ $(function() {
 			$('#page #content').columnize({ columns: 2 });
 			
 			//Check for device width on load
-			_cmg.showMobileStoryView();
+			_cmg.showMobileView();
 
 	}
 	
 	//Load Mobile Story View
-	_cmg.showMobileStoryView = function(story){
+	_cmg.showMobileView = function(story){
 		
 		//Enable Mobile View	
 		if($("#DeviceWidth-480").css("float") === 'left' && _cmg.properties.device480 === false ){
-			$('#page').addClass('480px');
-			
+						
 			//Allow this to only run once
 			_cmg.properties.device480 = true;
 			
-			//Move the dates above the h2
-			$('#page h2').before( $('.postedUpdated') );
-			//Move the social after h2
-			$('#page h2').after( $('#page .social') );
-			$('#page .social').removeClass('greyscale');
+			//Update for 480 width
+			$('#page').addClass('width480');
+			if($('#story')){
+				//Move the dates above the h2
+				$('#page h2').before( $('.postedUpdated') );
+				//Move the social after h2
+				$('#page h2').after( $('#page .social') );
+				$('#page .social').removeClass('greyscale');
+			}
 		}
 		
 		//Disable Mobile View 
@@ -146,9 +152,12 @@ $(function() {
 			_cmg.properties.device480 = false;
 			
 			//Move things back to > 480 width
-			$('#page h2').after( $('.postedUpdated') );
-			$('#page .container > .col2').prepend( $('#page .social') );
-			$('#page .social').addClass('greyscale');
+			$('#page').removeClass('width480');
+			if($('#story')){
+				$('#page h2').after( $('.postedUpdated') );
+				$('#page .container > .col2').prepend( $('#page .social') );
+				$('#page .social').addClass('greyscale');
+			}
 		}
 	}
 	
@@ -175,9 +184,9 @@ $(function() {
 	
 	//check for window resize,	
 	$(window).resize(function(){	
-		_cmg.showMobileStoryView();
+		_cmg.showMobileView();
 	});
-
+	
 
 
 });
